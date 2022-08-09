@@ -6,7 +6,7 @@ const TopBar=()=>{
         <div>
             <Link to="/">Home</Link> &nbsp;&nbsp;
             <Link to="/addmovies">Add Movies</Link> &nbsp;&nbsp;
-            <Link to="">Manage Movies</Link> &nbsp;&nbsp;
+            <Link to="/moviemanage">Manage Movies</Link> &nbsp;&nbsp;
             <Link to="">Report</Link> &nbsp;&nbsp;
             <Link to="">Logout</Link> &nbsp;&nbsp;
         </div>
