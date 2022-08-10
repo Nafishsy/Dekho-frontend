@@ -4,28 +4,32 @@ import axios from 'axios';
 import axiosConfig from './axiosConfig';
 
 const MovieEdit=()=>{
-    var{id} = useParams();  
+    const {id} = useParams();  
+    const [name,setName] = useState("");
+    const [description,setDescription] = useState("");
+    const [genre,setGenre] = useState("");
+    const [banner,setBanner] = useState(null);
+    const [movie,setMovie] = useState(null);    
+
+    const [errs,setErrs] = useState({});
+    const [msg,setMsg] = useState("");
     
-    const [movieDetails,setMovieDetails] = useState(null);
+    const [Data,setMovieDetails] = useState(null);
 
     useEffect(()=>{
+
         axios.get("http://localhost:8000/api/movie/details/"+id).then((rsp)=>{
             setMovieDetails(rsp.data);
+            setName(Data.name);
+            setDescription(Data.description);
+
         },(er)=>{
 
         })
 
     },[id])
 
-    const [name,setName] = useState("");
-    const [description,setDescription] = useState("");
-    const [genre,setGenre] = useState("");
-    const [banner,setBanner] = useState(null);
-    const [movie,setMovie] = useState(null);
-    
 
-    const [errs,setErrs] = useState({});
-    const [msg,setMsg] = useState("");
     
     const handleSubmit=(event)=>{
         event.preventDefault();
@@ -40,7 +44,8 @@ const MovieEdit=()=>{
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger;
-            window.location.href="/";
+            
+            window.location.href="/moviemanage";
         },(err)=>{
             debugger;
             setErrs(err.response.data);
