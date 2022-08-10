@@ -15,6 +15,18 @@ const MovieList=()=>{
     },[]);
 
 
+    const Delete=(id)=>{        
+        axios.get("http://localhost:8000/api/movie/delete/"+id).
+        then((succ)=>{
+            //setMsg(succ.data.msg);
+            debugger;
+            
+            window.location.href="/moviemanage";
+        },(err)=>{
+            debugger;
+        })
+    }
+
     const loadData=()=>{
         axiosConfig.get("movie/list").then((rsp)=>{
             setMovies(rsp.data);
@@ -46,7 +58,7 @@ const MovieList=()=>{
                         <td> <center><video controls src="{{asset('movies')}}/{{$movie->movie}}" width="350" height="350"></video></center></td>
                         <td> 
                             <button><Link to={`/movie/edit/${movie.id}`} >EDIT </Link></button> 
-                            <button><Link to={`/movie/delete/${movie.id}`}>DELETE</Link></button> 
+                            <button onClick={(e)=>{Delete(movie.id)}}>DELETE</button> 
 
                         </td>
                     </tr> 
