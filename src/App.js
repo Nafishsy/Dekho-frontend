@@ -4,6 +4,8 @@ import Home from './Components/Home';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import AddMovies from './Components/AddMovies';
 import MovieMange from './Components/MovieManage';
+import MovieEdit from './Components/MovieEdit';
+import MovieDelete from './Components/MovieDelete';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/addmovies" element={<AddMovies />}></Route>
               <Route path="/moviemanage" element={<MovieMange/>}></Route>
+              <Route path="/movie/edit/:id" element={<MovieEdit/>} />
+              <Route path="/movie/delete/:id" element={<MovieDelete/>} />
         </Routes>
       </Router>
 

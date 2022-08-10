@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axios from 'axios';
 import axiosConfig from './axiosConfig';
+import { Link } from "react-router-dom";
 
 const MovieList=()=>{
     const[movies,setMovies] = useState([]);
@@ -44,8 +45,9 @@ const MovieList=()=>{
                         <td> <img src={'../../../Project/storage/banners/'+movie.banner} width="350" height="350" alt={movie.name}/></td>
                         <td> <center><video controls src="{{asset('movies')}}/{{$movie->movie}}" width="350" height="350"></video></center></td>
                         <td> 
-                            <button>Edit</button> 
-                            <button>Delete</button> 
+                            <button><Link to={`/movie/edit/${movie.id}`} >EDIT </Link></button> 
+                            <button><Link to={`/movie/delete/${movie.id}`}>DELETE</Link></button> 
+
                         </td>
                     </tr> 
                     )

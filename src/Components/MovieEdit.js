@@ -1,20 +1,32 @@
-import React,{useState,useEffect} from "react";
+import {useParams} from 'react-router-dom';
+import {useState,useEffect}  from 'react';
 import axios from 'axios';
 import axiosConfig from './axiosConfig';
 
+const MovieEdit=()=>{
+    var{id} = useParams();  
+    
+    const [movieDetails,setMovieDetails] = useState(null);
 
-const AddMovie=()=>{
+    useEffect(()=>{
+        axios.get("http://localhost:8000/api/movie/details/"+id).then((rsp)=>{
+            setMovieDetails(rsp.data);
+        },(er)=>{
 
+        })
+
+    },[id])
 
     const [name,setName] = useState("");
     const [description,setDescription] = useState("");
     const [genre,setGenre] = useState("");
     const [banner,setBanner] = useState(null);
     const [movie,setMovie] = useState(null);
+    
 
     const [errs,setErrs] = useState({});
     const [msg,setMsg] = useState("");
-
+    
     const handleSubmit=(event)=>{
         event.preventDefault();
         var data = new FormData();
@@ -24,7 +36,7 @@ const AddMovie=()=>{
         data.append("description",description);
         data.append("genre",genre);
         
-        axios.post("http://localhost:8000/api/movie/upload",data).
+        axios.post("http://localhost:8000/api/movie/update/"+id,data).
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger;
@@ -35,15 +47,18 @@ const AddMovie=()=>{
         })
     }
 
-    return (
+    
+    return(
         <div>
+            Movie Id : {id} <br/>
+            
 
-        <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
             <h1>{msg}</h1>
             Movie Name<input value={name} onChange={(e)=>{setName(e.target.value)}} type="text"/><span>{errs.name? errs.name[0]:''}</span><br/>
             Description: <input value={description} onChange={(e)=>{setDescription(e.target.value)}} type="text"/><br/>
             Genre <br/>
-                        <input type="radio" name="genre" value='Action' onClick={(e)=>{setGenre(e.target.value)}}/>Action<br/>
+                        <input type="radio" name="genre" value='Action' onClick={(e)=>{setGenre(e.target.value)}} />Action<br/>
                         <input type="radio" name="genre" value='Thriller'onClick={(e)=>{setGenre(e.target.value)}}/>Thriller<br/>
                         <input type="radio" name="genre" value='Comedy'onClick={(e)=>{setGenre(e.target.value)}}/>Comedy<br/>
                         <input type="radio" name="genre" value='Adventure'onClick={(e)=>{setGenre(e.target.value)}}/>Adventure<br/>
@@ -53,11 +68,9 @@ const AddMovie=()=>{
             Movie File: <input type="file" onChange={(e)=>{setMovie(e.target.files[0])}} name="movie"></input> <br/>
             Banner: <input type="file" onChange={(e)=>{setBanner(e.target.files[0])}} name="banner"></input> <br/>
             <input type="submit" value="Upload"/> 
-        </form>
-
-        
+            </form>
         </div>
     )
-}
 
-export default AddMovie;
+}
+export default MovieEdit;
