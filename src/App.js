@@ -6,6 +6,7 @@ import AddMovies from './Components/AddMovies';
 import MovieMange from './Components/MovieManage';
 import MovieEdit from './Components/MovieEdit';
 import MovieDelete from './Components/MovieDelete';
+import Reports from './Components/Reports';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="/moviemanage" element={<MovieMange/>}></Route>
               <Route path="/movie/edit/:id" element={<MovieEdit/>} />
               <Route path="/movie/delete/:id" element={<MovieDelete/>} />
+              <Route path="/report" element={<Reports/>} />
         </Routes>
       </Router>
 

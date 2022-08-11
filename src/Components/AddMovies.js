@@ -28,7 +28,7 @@ const AddMovie=()=>{
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger;
-            window.location.href="/";
+            window.location.href="/moviemanage";
         },(err)=>{
             debugger;
             setErrs(err.response.data);

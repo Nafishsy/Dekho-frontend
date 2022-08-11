@@ -48,14 +48,13 @@ const MovieList=()=>{
                 {
                     movies.map((movie)=>
                     
-                    <tr> 
-                        
+                    <tr>                        
 
                         <td key={movie.id}> {movie.name}</td>
                         <td> {movie.genre}</td>
                         <td> {movie.description}</td>
-                        <td> <img src={'../../../Project/storage/banners/'+movie.banner} width="350" height="350" alt={movie.name}/></td>
-                        <td> <center><video controls src="{{asset('movies')}}/{{$movie->movie}}" width="350" height="350"></video></center></td>
+                        <td> <img src={`http://localhost:8000/banners/${movie.banner}`} width="350" height="350" alt={movie.name}/></td>
+                        <td> <center><video controls src={`http://localhost:8000/movies/${movie.movie}`} width="350" height="350"></video></center></td>
                         <td> 
                             <button><Link to={`/movie/edit/${movie.id}`} >EDIT </Link></button> 
                             <button onClick={(e)=>{Delete(movie.id)}}>DELETE</button> 
