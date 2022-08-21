@@ -7,7 +7,8 @@ const MovieList=()=>{
     const[movies,setMovies] = useState([]);
 
     useEffect(()=>{
-        axiosConfig.get("movie/list").then((rsp)=>{      
+        axiosConfig.get("movie/list").then((rsp)=>{ 
+            debugger     
         setMovies(rsp.data);
         },(er)=>{
 
@@ -61,8 +62,8 @@ const MovieList=()=>{
                         <td key={movie.id}> {movie.name}</td>
                         <td> {movie.genre}</td>
                         <td> {movie.description}</td>
-                        <td> <img src={`http://localhost:8000/banners/${movie.banner}`} width="350" height="350" alt={movie.name}/></td>
-                        <td> <center><video controls src={`http://localhost:8000/movies/${movie.movie}`} width="350" height="350"></video></center></td>
+                        <td> <img src={`http://localhost:8000/banners/${movie.banner}`} width="350" height="350" alt={movie.name} /></td>
+                        <td> <center><video controls src={`http://localhost:8000/movies/${movie.movie}`} width="350" height="350" type="video/mp4" ></video></center></td>
                         <td> 
                             <button><Link to={`/movie/edit/${movie.id}`} >EDIT </Link></button> 
                             <button onClick={(e)=>{Delete(movie.id)}} >DELETE</button> 
