@@ -45,7 +45,7 @@ const AddMovie=()=>{
         <form onSubmit={handleSubmit}>
             <h1>{msg}</h1>
             Movie Name<input value={name} onChange={(e)=>{setName(e.target.value)}} type="text"/><span>{errs.name? errs.name[0]:''}</span><br/>
-            Description: <input value={description} onChange={(e)=>{setDescription(e.target.value)}} type="text"/><span style="color:blue;font-weight:bold">>{errs.description? errs.description[0]:''}</span><br/>
+            Description: <input value={description} onChange={(e)=>{setDescription(e.target.value)}} type="text"/><span style="color:blue;font-weight:bold">{errs.description? errs.description[0]:''}</span><br/>
             Genre : <span>{errs.genre? errs.genre[0]:''}</span><br/>
                         <input type="radio" name="genre" value='Action' onClick={(e)=>{setGenre(e.target.value)}}/>Action<br/>
                         <input type="radio" name="genre" value='Thriller'onClick={(e)=>{setGenre(e.target.value)}}/>Thriller<br/>
