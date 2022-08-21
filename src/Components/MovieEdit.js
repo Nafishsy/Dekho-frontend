@@ -4,6 +4,10 @@ import axios from 'axios';
 import axiosConfig from './axiosConfig';
 
 const MovieEdit=()=>{
+
+    var BannerFlag = false;
+    var MovieFlag = false;
+
     const {id} = useParams();  
     const [name,setName] = useState("");
     const [description,setDescription] = useState("");
@@ -16,26 +20,34 @@ const MovieEdit=()=>{
     
     const [Data,setMovieDetails] = useState(null);
 
-    useEffect(()=>{
+    /*useEffect(()=>{
 
         axios.get("http://localhost:8000/api/movie/details/"+id).then((rsp)=>{
-            setMovieDetails(rsp.data);
-            setName(Data.name);
-            setDescription(Data.description);
+        
+            debugger
 
         },(er)=>{
-
+            
         })
 
     },[id])
-
+*/
 
     
     const handleSubmit=(event)=>{
         event.preventDefault();
         var data = new FormData();
-        data.append("banner",banner,banner.name);
-        data.append("movie",movie,movie.name);        
+
+        console.log(movie);
+        if(movie!=null)
+        {
+            data.append("movie",movie,banner.name);
+        }
+        if(banner!=null)
+        {
+            data.append("banner",banner,banner.name);
+        }
+            
         data.append("name",name);
         data.append("description",description);
         data.append("genre",genre);
@@ -43,14 +55,15 @@ const MovieEdit=()=>{
         axios.post("http://localhost:8000/api/movie/update/"+id,data).
         then((succ)=>{
             //setMsg(succ.data.msg);
-            debugger;
-            
+            debugger;            
             window.location.href="/moviemanage";
         },(err)=>{
-            debugger;
             setErrs(err.response.data);
+            debugger
         })
     }
+
+
 
     
     return(
@@ -61,19 +74,20 @@ const MovieEdit=()=>{
             <form onSubmit={handleSubmit}>
             <h1>{msg}</h1>
             Movie Name<input value={name} onChange={(e)=>{setName(e.target.value)}} type="text"/><span>{errs.name? errs.name[0]:''}</span><br/>
-            Description: <input value={description} onChange={(e)=>{setDescription(e.target.value)}} type="text"/><br/>
-            Genre <br/>
-                        <input type="radio" name="genre" value='Action' onClick={(e)=>{setGenre(e.target.value)}} />Action<br/>
+            Description: <input value={description} onChange={(e)=>{setDescription(e.target.value)}} type="text"/><span>{errs.description? errs.description[0]:''}</span><br/>
+            Genre : <span>{errs.genre? errs.genre[0]:''}</span><br/>
+                        <input type="radio" name="genre" value='Action' onClick={(e)=>{setGenre(e.target.value)}}/>Action<br/>
                         <input type="radio" name="genre" value='Thriller'onClick={(e)=>{setGenre(e.target.value)}}/>Thriller<br/>
                         <input type="radio" name="genre" value='Comedy'onClick={(e)=>{setGenre(e.target.value)}}/>Comedy<br/>
                         <input type="radio" name="genre" value='Adventure'onClick={(e)=>{setGenre(e.target.value)}}/>Adventure<br/>
                         <input type="radio" name="genre" value='Documentary'onClick={(e)=>{setGenre(e.target.value)}}/>Documentary<br/>
 
 
-            Movie File: <input type="file" onChange={(e)=>{setMovie(e.target.files[0])}} name="movie"></input> <br/>
-            Banner: <input type="file" onChange={(e)=>{setBanner(e.target.files[0])}} name="banner"></input> <br/>
+            Movie File: <input type="file" onChange={(e)=>{setMovie(e.target.files[0])}} name="movie"></input> <span>{errs.movie? errs.movie[0]:''}</span><br/>
+            Banner: <input type="file" onChange={(e)=>{setBanner(e.target.files[0])}} name="banner"></input> <span>{errs.banner? errs.banner[0]:''}</span><br/>
             <input type="submit" value="Upload"/> 
-            </form>
+        </form>
+
         </div>
     )
 
