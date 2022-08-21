@@ -15,8 +15,11 @@ const MovieList=()=>{
     },[]);
 
 
-    const Delete=(id)=>{        
-        axios.get("http://localhost:8000/api/movie/delete/"+id).
+    const Delete=(id)=>{    
+        var answer = window.confirm("Save data?");
+
+        if (answer) {
+            axios.get("http://localhost:8000/api/movie/delete/"+id).
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger;
@@ -25,6 +28,11 @@ const MovieList=()=>{
         },(err)=>{
             debugger;
         })
+        }
+        else {
+            
+        }
+        
     }
 
     const loadData=()=>{
@@ -57,7 +65,7 @@ const MovieList=()=>{
                         <td> <center><video controls src={`http://localhost:8000/movies/${movie.movie}`} width="350" height="350"></video></center></td>
                         <td> 
                             <button><Link to={`/movie/edit/${movie.id}`} >EDIT </Link></button> 
-                            <button onClick={(e)=>{Delete(movie.id)}}>DELETE</button> 
+                            <button onClick={(e)=>{Delete(movie.id)}} >DELETE</button> 
 
                         </td>
                     </tr> 
