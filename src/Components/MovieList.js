@@ -7,7 +7,7 @@ const MovieList=()=>{
     const[movies,setMovies] = useState([]);
 
     useEffect(()=>{
-        axiosConfig.get("movie/list").then((rsp)=>{
+        axiosConfig.get("movie/list").then((rsp)=>{      
         setMovies(rsp.data);
         },(er)=>{
 
