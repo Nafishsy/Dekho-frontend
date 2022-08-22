@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
-import axios from 'axios';
-import axiosConfig from './axiosConfig';
+import axiosConfig from '../Public Components/axiosConfig';
 
 
 const AddMovie=()=>{
@@ -27,7 +26,7 @@ const AddMovie=()=>{
         data.append("genre",genre);
         console.log(data);
         debugger
-        axios.post("http://localhost:8000/api/movie/upload",data).
+        axiosConfig.post("movie/upload",data).
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger

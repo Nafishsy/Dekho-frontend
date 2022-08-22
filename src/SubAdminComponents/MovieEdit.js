@@ -1,7 +1,6 @@
 import {useParams} from 'react-router-dom';
 import {useState,useEffect}  from 'react';
-import axios from 'axios';
-import axiosConfig from './axiosConfig';
+import axiosConfig from '../Public Components/axiosConfig';
 
 const MovieEdit=()=>{
 
@@ -19,7 +18,7 @@ const MovieEdit=()=>{
 
     useEffect(()=>{
 
-        axios.get("http://localhost:8000/api/movie/details/"+id).then((rsp)=>{
+        axiosConfig.get("http://localhost:8000/api/movie/details/"+id).then((rsp)=>{
             setName(rsp.data.name);
             setDescription(rsp.data.description);
             setGenre(rsp.data.genre);
@@ -50,7 +49,7 @@ const MovieEdit=()=>{
         data.append("description",description);
         data.append("genre",genre);
         
-        axios.post("http://localhost:8000/api/movie/update/"+id,data).
+        axiosConfig.post("movie/update/"+id,data).
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger;            
@@ -81,8 +80,8 @@ const MovieEdit=()=>{
                         <input type="radio" name="genre" value='Documentary'onClick={(e)=>{setGenre(e.target.value)}} checked={genre == "Documentary"}/>Documentary<br/>
                         
 
-            Movie File: <input type="file" onChange={(e)=>{setMovie(e.target.files[0])}} name="movie"></input> <span>{errs.movie? errs.movie[0]:''}</span><br/>
-            Banner: <input type="file" onChange={(e)=>{setBanner(e.target.files[0])}} name="banner"></input> <span>{errs.banner? errs.banner[0]:''}</span><br/>
+            Movie File: <input type="file" onChange={(e)=>{setMovie(e.target.files[0])}} name="movie"></input> <span>{errs.movie? errs.movie[0]:'(Optional)'}</span> <br/>
+            Banner: <input type="file" onChange={(e)=>{setBanner(e.target.files[0])}} name="banner"></input> <span>{errs.banner? errs.banner[0]:'(Optional)'}</span> <br/>
             <input type="submit" value="Upload"/> 
         </form>
 

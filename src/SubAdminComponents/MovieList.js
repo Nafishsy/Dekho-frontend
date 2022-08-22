@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
-import axios from 'axios';
-import axiosConfig from './axiosConfig';
+import axiosConfig from '../Public Components/axiosConfig';
 import { Link } from "react-router-dom";
 
 const MovieList=()=>{
@@ -20,7 +19,7 @@ const MovieList=()=>{
         var answer = window.confirm("Save data?");
 
         if (answer) {
-            axios.get("http://localhost:8000/api/movie/delete/"+id).
+            axiosConfig.get("movie/delete/"+id).
         then((succ)=>{
             //setMsg(succ.data.msg);
             debugger;

@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
-import axios from 'axios';
-import axiosConfig from './axiosConfig';
+import axiosConfig from '../Public Components/axiosConfig';
 
 const Reports=()=>{
 
@@ -9,7 +8,7 @@ const Reports=()=>{
 
     useEffect(()=>{
 
-        axios.get("http://localhost:8000/api/subadmin/bills").then((rsp)=>{            
+        axiosConfig.get("subadmin/bills").then((rsp)=>{            
         setAccounts(rsp.data.accounts);
         setBills(rsp.data.bills);
         debugger

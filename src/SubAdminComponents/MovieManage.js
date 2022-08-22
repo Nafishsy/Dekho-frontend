@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from 'axios';
-import axiosConfig from './axiosConfig';
+import axiosConfig from '../Public Components/axiosConfig';
 import MovieList from "./MovieList";
 
 
