@@ -11,7 +11,7 @@ const Registration=()=>{
     const [errs,setErrs] = useState({});
 
 
-    const handleLogin=(event)=>{
+    const handleReg=(event)=>{
         event.preventDefault();
         const data={email:email,username:username,password:password,confirmPassword:cpassword};
         axiosConfig.post("registration",data).
@@ -30,7 +30,7 @@ const Registration=()=>{
     return(
         <div>
 
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleReg}>
 
             
             
