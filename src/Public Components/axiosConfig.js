@@ -6,7 +6,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use((config)=>{
     config.headers.common["Authorization"]=localStorage.getItem("_authToken");
-    alert("authorized");
+    //alert("authorized");
     debugger;
     return config;
 },(err)=>{

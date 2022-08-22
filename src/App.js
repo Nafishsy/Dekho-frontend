@@ -9,6 +9,11 @@ import MovieDelete from './SubAdminComponents/MovieDelete';
 import Reports from './SubAdminComponents/Reports';
 import Login from './Public Components/login';
 import NotFound from './Public Components/NotFound';
+import AdminCustomersMoviesList from "./AdminComponents/AdminCustomersMoviesList";
+import AdminHome from "./AdminComponents/AdminHome";
+import AdminUsersList from "./AdminComponents/AdminUsersList";
+import Registration from './Public Components/Registration';
+import ForgetPassword from './Public Components/ForgetPassword';
 
 
 function App() {
@@ -19,10 +24,17 @@ function App() {
       
       <Router>
         
-        <TopBar/>
+        {/* <TopBar/> */}
 
         <Routes>
+
+              
               <Route path="/" element={<Login />}></Route>
+              <Route path="/registration" element={<Registration />}></Route>
+              <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
+
+
+              
               <Route path="/home" element={<Home />}></Route>
               <Route path="/addmovies" element={<AddMovies />}></Route>
               <Route path="/moviemanage" element={<MovieMange/>}></Route>
@@ -30,7 +42,15 @@ function App() {
               <Route path="/movie/delete/:id" element={<MovieDelete/>} />
               <Route path="/report" element={<Reports/>} />
               <Route path="/notfound" element={<NotFound/>} />
+
+
+              <Route path="/Admin/CustomersMoviesList" element={<AdminCustomersMoviesList/>}/>
+              <Route path="/Admin/UsersList" element={<AdminUsersList/>}/>
+              <Route path="/Admin/Home" element={<AdminHome/>}/>
+
+
         </Routes>
+
       </Router>
 
     </div>
