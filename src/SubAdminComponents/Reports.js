@@ -29,7 +29,7 @@ const Reports=()=>{
                 <table width='100%'>
                     <tr>
                         <td>
-                    Total Account:{bills.total} <br/><br/>
+                    Total Account:{bills.actives+bills.inactives+bills.bans} <br/><br/>
                     Paid: {bills.actives} <br></br>
                     inacative: {bills.inactives} <br></br>
                     banned: {bills.bans} <br></br>

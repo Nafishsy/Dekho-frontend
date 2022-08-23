@@ -20,6 +20,7 @@ import LogOut from './Public Components/Logout';
 import BarChart from './SubAdminComponents/BarChart';
 import SubProfile from './SubAdminComponents/SubProfile';
 import SubChangePass from './SubAdminComponents/SubChangePass';
+import ChatSys from './SubAdminComponents/ChatSys';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
               <Route path="/reportChart" element={<BarChart />}></Route>
               <Route path="/SubAdmin/Profile" element={<SubProfile/>}/>
               <Route path="/SubAdmin/Profile/ChangePassword" element={<SubChangePass/>}/>
+              <Route path="/SubAdmin/Chatsystem" element={<ChatSys/>}/>
 
               {/* Anik */}
               <Route path="/Admin/CustomersMoviesList" element={<AdminCustomersMoviesList/>}/>
