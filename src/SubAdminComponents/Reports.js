@@ -23,7 +23,7 @@ const Reports=()=>{
 
     return(
         <div>
-            {/* <BarChart /> */}
+            <BarChart />
             <center>
             <h1>Billing Report</h1>
             Total Account:{bills.total} <br></br>
