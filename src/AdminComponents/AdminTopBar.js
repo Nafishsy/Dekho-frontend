@@ -22,7 +22,7 @@ const AdminTopBar=()=>{
         <div>
             <center><h1>DEKHO</h1></center>
 
-            <Link to={`/admin/profile/`} ><p align='right'>EDIT</p> </Link>
+            <Link to={`/admin/profile/`} ><p align='right'>Profile</p> </Link>
 
             <hr/>
             <AdminTop url="/Admin/CustomersMoviesList" value="Customers-Movies"/> |

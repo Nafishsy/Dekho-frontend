@@ -6,7 +6,13 @@ const Profile=()=>{
 
     const [user,setUser] = useState({});
     const [profilepic,setProfilepic] = useState(null);
+    const [password,setPassword] = useState("");
+    const [Oldpassword,setOldPassword] = useState("");
+    const [Newpassword,setNewPassword] = useState("");
     const [errs,setErrs] = useState({});
+    const [flag,setFlag] = useState(false);
+    
+    
     useEffect(()=>{
 
     var data = {username:localStorage.getItem("username")}
@@ -19,7 +25,10 @@ const Profile=()=>{
     });
     },[user])
 
+    const ChangePassCLK=()=>{
+        setFlag(true)
 
+    }
     const handleSubmit=(event)=>{
         event.preventDefault();
         
@@ -47,7 +56,7 @@ const Profile=()=>{
         <div>
             <br/>
             <b>
-                <table border='1px' width='100%' height='500px'>
+                <table border='0px' width='100%' height='500px'>
 
                     <tr>
                         <td>Username:</td>
@@ -82,8 +91,32 @@ const Profile=()=>{
                             
                             </form>
                         </td>
-
+        
                     </tr>
+
+                    <button onClick={ChangePassCLK}>Change Password</button>
+                    <div>
+                        {
+                            flag
+                                ? <div>
+                                    
+                                    Old Password: <input onChange={(e)=>{setOldPassword(e.target.value)}} type="password" name="password" value={Oldpassword}/> <br/>
+                                    <span>{errs.Oldpassword? errs.Oldpassword[0]:''}</span><br/>
+                                    
+                                   
+                                    
+                                     new Password: <input onChange={(e)=>{setNewPassword(e.target.value)}} type="password" name="password" value={Newpassword}/> <br/>
+                                    <span>{errs.Newpassword? errs.Newpassword[0]:''}</span><br/>
+
+                                   
+                                    
+                                     Confirm Password: <input onChange={(e)=>{setPassword(e.target.value)}} type="password" name="password" value={password}/> <br/>
+                                    <span>{errs.password? errs.password[0]:''}</span><br/>
+                                
+                                    </div>
+                                : ""
+                        }
+                     </div>
                 </table>
 
             </b>
