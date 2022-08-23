@@ -38,10 +38,9 @@ function App() {
         <Routes>
 
               
-              <Route path="/" element={<Login />}></Route>
-              <Route path="/registration" element={<Registration />}></Route>
+              
               <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
-              <Route path="/logout" element={<LogOut />}></Route>
+              
               
               {/* Nafiz */}
               <Route path="/SubAdmin/home" element={<Home />}></Route>
@@ -56,12 +55,17 @@ function App() {
               <Route path="/SubAdmin/Profile/ChangePassword" element={<SubChangePass/>}/>
               <Route path="/SubAdmin/Chatsystem" element={<ChatSys/>}/>
 
-              {/* Anik */}
+              {/* ANIK START */}
+              <Route path="/" element={<Login />}></Route>
+              <Route path="/logout" element={<LogOut />}></Route>
+              <Route path="/registration" element={<Registration />}></Route>
               <Route path="/Admin/CustomersMoviesList" element={<AdminCustomersMoviesList/>}/>
               <Route path="/Admin/UsersList" element={<AdminUsersList/>}/>
               <Route path="/Admin/Home" element={<AdminHome/>}/>
               <Route path="/Admin/Profile" element={<Profile/>}/>
               <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/>
+              {/* <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/> */}
+              {/* ANIK END */}
 
 
         </Routes>

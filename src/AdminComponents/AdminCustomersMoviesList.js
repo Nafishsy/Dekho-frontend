@@ -55,48 +55,56 @@ const AdminCustomersMoviesList=()=>{
             ?   <h3>{errs.msg}</h3>
             :   <div>
 
-                    Search: <input value={Search} name='Search' onChange={(e)=>{setSearch(e.target.value)}} type="text"/>
+                    Search: <input value={Search} name='Search' onChange={(e)=>{setSearch(e.target.value)}} type="text"/> <br/><br/>
 
-                    <table border="1">
+                    <table width="100%">
                         <tr>
-                            <th>Customer Name</th>
-                            <th>Movie Name</th>
-                        </tr>
-                        {
-                            moviesUserList.map((item)=>
-                            <tr key={item.ID}>
-                                <td>{ item.CustomerName }</td>
-                                <td>{ item.MovieName }</td>
-                                <td>
+                            <td>
+                                <table border="1" width="100%">
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <th>Movie Name</th>
+                                        <th>Show details</th>
+                                    </tr>
                                     {
-                                        <form onSubmit={showInfo}>
-                                            <input type="submit" onClick={(e)=>{setID(item.ID)}} value="Show Info"></input>
-                                        </form>
-                                    }
-                                </td>
-                            </tr>
-                            )
-                        } 
+                                        moviesUserList.map((item)=>
+                                        <tr key={item.ID}>
+                                            <td>{ item.CustomerName }</td>
+                                            <td>{ item.MovieName }</td>
+                                            <td>
+                                                {
+                                                    <form onSubmit={showInfo}>
+                                                        <input type="submit" onClick={(e)=>{setID(item.ID)}} value="Show Info"></input>
+                                                    </form>
+                                                }
+                                            </td>
+                                        </tr>
+                                        )
+                                    } 
+                                </table>
+                            </td>
+                            <td>
+                                <div>
+                                {
+                                    show
+                                    ?   <div>
+                                            <fieldset>
+                                                <b>ID : {User.ID} </b><br/>
+                                                <b>User name : {User.CustomerName} </b><br/>
+                                                <b>Email : {User.CustomerEmail} </b><br/>
+                                                <b>Movie name : {User.MovieName} </b><br/>
+                                                <b>Movie description : {User.MovieDescription} </b><br/>
+                                                <b>Movie rating : {User.MovieRating} </b><br/>
+                                                <b>Movie upload time : {User.MovieUploadTime} </b><br/>
+                                                <b>Movie genre : {User.MovieGenre} </b><br/>
+                                            </fieldset>
+                                        </div>
+                                    : ""
+                                }  
+                                </div>
+                            </td>
+                        </tr>
                     </table>
-
-                    <div>
-                    {
-                        show
-                        ?   <div>
-                                <fieldset style={{width:"10%"}}>
-                                    <b>ID : {User.ID} </b><br/>
-                                    <b>User name : {User.CustomerName} </b><br/>
-                                    <b>Email : {User.CustomerEmail} </b><br/>
-                                    <b>Movie name : {User.MovieName} </b><br/>
-                                    <b>Movie description : {User.MovieDescription} </b><br/>
-                                    <b>Movie rating : {User.MovieRating} </b><br/>
-                                    <b>Movie upload time : {User.MovieUploadTime} </b><br/>
-                                    <b>Movie genre : {User.MovieGenre} </b><br/>
-                                </fieldset>
-                            </div>
-                        : ""
-                    }  
-                    </div>
 
                     <br/>
                 </div>
