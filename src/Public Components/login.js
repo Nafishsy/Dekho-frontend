@@ -56,19 +56,18 @@ const Login=()=>{
         <div>
             <center>
                 <h1>DEKHO</h1>
-            <br/>
-            <br/>
-            <br/>
+            
+            <br/> <hr/>
             <form onSubmit={handleLogin}>
                     Username: <input onChange={(e)=>{setUsername(e.target.value)}} size={30} type="text" name="username" value={username}/> <br/>
                     <span>{errs.username? errs.username[0]:''}</span><br/>
                     Password: <input onChange={(e)=>{setPassword(e.target.value)}} type="password" name="password" value={password}/> <br/>
                     <span>{errs.password? errs.password[0]:''}</span><br/>
-                    <input type="submit" value="Login"/>
+                    <input type="submit" value="Login"/><br/><br/><hr/>
             </form>
 
-            <button><Link to={`/registration`} >Registration </Link></button> 
-            <button><Link to={`/forgetpassword`} >Forget Password</Link></button> 
+            Don't have an account ? <button><Link to={`/registration`} >REGISTER </Link></button> <br/><br/>
+            <button><Link to={`/forgetpassword`} >Forgot Password ?</Link></button> 
             </center>
         </div>
     )

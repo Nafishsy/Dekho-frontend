@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosConfig from '../Public Components/axiosConfig';
 import AdminTopBar from "./AdminTopBar";
+import BarChart from "./BarChart";
 
 const AdminUsersList = () => {
     const [UserList, setUserList] = useState([]);
@@ -75,16 +76,18 @@ const AdminUsersList = () => {
 
 
                         {/* Search: <input value={search} name="search" onChange={(e) => {setSearch(e.target.value.trim()); console.log(search)}} type="text" /> */}
-                        <input type="text" name="search" onChange={(e) => { searched(e.target.value.trim()) }} value={search} />
+                        Search: <input type="text" name="search" onChange={(e) => { searched(e.target.value.trim()) }} value={search} /> <br/><br/>
 
                         <table width="100%">
                             <tr>
                                 <td>
-                                    <table border="1">
+                                    <table border="1" width="100%">
                                         <tr>
                                             <th>Username</th>
                                             <th>Role</th>
                                             <th>Operation</th>
+                                            <th>Show details</th>
+                                            <th>Graph</th>
                                         </tr>
                                         {
                                             UserList.map((item) =>
@@ -105,6 +108,7 @@ const AdminUsersList = () => {
                                                             </form>
                                                         }
                                                     </td>
+                                                    {/* <td><BarChart/></td> */}
                                                 </tr>
                                             )
                                         }

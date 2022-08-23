@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosConfig from  '../Public Components/axiosConfig.js';
 import '../CSS/table.css';
+import AdminTopBar from "./AdminTopBar.js";
 const Profile=()=>{
 
 
@@ -74,6 +75,7 @@ const Profile=()=>{
     
     return(
         <div>
+            <AdminTopBar/>
             <br/>
             <b>
                 <table border='0px' width='100%' height='500px'>
