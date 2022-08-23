@@ -14,6 +14,8 @@ import AdminHome from "./AdminComponents/AdminHome";
 import AdminUsersList from "./AdminComponents/AdminUsersList";
 import Registration from './Public Components/Registration';
 import ForgetPassword from './Public Components/ForgetPassword';
+import Profile from './AdminComponents/Profile';
+import ChangePass from './AdminComponents/ChangePass';
 
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
               <Route path="/Admin/CustomersMoviesList" element={<AdminCustomersMoviesList/>}/>
               <Route path="/Admin/UsersList" element={<AdminUsersList/>}/>
               <Route path="/Admin/Home" element={<AdminHome/>}/>
+              <Route path="/Admin/Profile" element={<Profile/>}/>
+              <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/>
 
 
         </Routes>

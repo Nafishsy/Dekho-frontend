@@ -23,6 +23,7 @@ const Login=()=>{
             //var message=succ.data.msg; off kore rakhsi alert marbo pore
             debugger
             localStorage.setItem("_authToken",token);
+            localStorage.setItem("username",username);
             
             console.log(user);
             console.log(token);
