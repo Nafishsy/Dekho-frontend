@@ -6,11 +6,12 @@ const Profile=()=>{
 
     const [user,setUser] = useState({});
     const [profilepic,setProfilepic] = useState(null);
-    const [password,setPassword] = useState("");
-    const [Oldpassword,setOldPassword] = useState("");
-    const [Newpassword,setNewPassword] = useState("");
+    const [conf_pass,setConf_pass] = useState("");
+    const [curr_pass,setCurr_pass] = useState("");
+    const [new_pass,setNew_pass] = useState("");
     const [errs,setErrs] = useState({});
     const [flag,setFlag] = useState(false);
+    const [ppFlag,setppFlag] = useState(false);
     
     
     useEffect(()=>{
@@ -23,7 +24,7 @@ const Profile=()=>{
     },(err)=>{
         debugger;
     });
-    },[user])
+    },[ppFlag])
 
     const ChangePassCLK=()=>{
         setFlag(true)
@@ -42,6 +43,25 @@ const Profile=()=>{
         axiosConfig.post("profilepic/upload",data).
         then((succ)=>{
             //setMsg(succ.data.msg);
+            setppFlag(true)
+            debugger
+            //window.location.href="/";
+        },(err)=>{
+            setErrs(err.response.data);
+            console.log(err);
+            debugger
+        })
+    }
+    
+    const handleChangePass=(event)=>{
+        event.preventDefault();
+        var data= {username:localStorage.getItem("username"),curr_pass:curr_pass,new_pass:new_pass,conf_pass:conf_pass}
+        debugger
+        axiosConfig.post("profilepic/changepass",data).
+        then((succ)=>{
+            //setMsg(succ.data.msg);
+            setFlag(false)
+            setppFlag('change')
             debugger
             //window.location.href="/";
         },(err)=>{
@@ -94,25 +114,38 @@ const Profile=()=>{
         
                     </tr>
 
-                    <button onClick={ChangePassCLK}>Change Password</button>
+                    <div>
+                        {
+                            !flag
+                                ? <div>
+                                        <button onClick={ChangePassCLK}>Change Password</button>
+                                   </div>
+                                : ''
+                        }
+                     </div>
+
                     <div>
                         {
                             flag
                                 ? <div>
+
+                                    <form onSubmit={handleChangePass}>
+
                                     
-                                    Old Password: <input onChange={(e)=>{setOldPassword(e.target.value)}} type="password" name="password" value={Oldpassword}/> <br/>
-                                    <span>{errs.Oldpassword? errs.Oldpassword[0]:''}</span><br/>
+                                    Old Password: <input onChange={(e)=>{setCurr_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={curr_pass}/> <br/>
+                                    <span>{errs.curr_pass? errs.curr_pass[0]:''}</span><br/>
                                     
                                    
                                     
-                                     new Password: <input onChange={(e)=>{setNewPassword(e.target.value)}} type="password" name="password" value={Newpassword}/> <br/>
-                                    <span>{errs.Newpassword? errs.Newpassword[0]:''}</span><br/>
+                                     New Password: <input onChange={(e)=>{setNew_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={new_pass}/> <br/>
+                                    <span>{errs.new_pass? errs.new_pass[0]:''}</span><br/>
 
                                    
                                     
-                                     Confirm Password: <input onChange={(e)=>{setPassword(e.target.value)}} type="password" name="password" value={password}/> <br/>
-                                    <span>{errs.password? errs.password[0]:''}</span><br/>
-                                
+                                     Confirm Password: <input onChange={(e)=>{setConf_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={conf_pass}/> <br/>
+                                    <span>{errs.conf_pass? errs.conf_pass[0]:''}</span><br/>
+                                    <input type="submit" value="Change"/>
+                                    </form>
                                     </div>
                                 : ""
                         }
