@@ -16,6 +16,7 @@ import Registration from './Public Components/Registration';
 import ForgetPassword from './Public Components/ForgetPassword';
 import Profile from './AdminComponents/Profile';
 import ChangePass from './AdminComponents/ChangePass';
+import LogOut from './Public Components/Logout';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/" element={<Login />}></Route>
               <Route path="/registration" element={<Registration />}></Route>
               <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
+              <Route path="/logout" element={<LogOut />}></Route>
 
 
               

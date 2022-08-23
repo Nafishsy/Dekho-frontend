@@ -1,19 +1,13 @@
 import React,{useState,useEffect} from "react";
 import axios from 'axios';
 import axiosConfig from '../Public Components/axiosConfig';
-import MovieList from "./MovieList";
-import TopBar from "./TopBar";
 
-
-const MovieMange=()=>{
-
+const LogOut=()=>{
 
     return(
         <div>
-            <TopBar/>
-            <MovieList/>
+            
         </div>
     )
 }
-
-export default MovieMange;
+export default LogOut
