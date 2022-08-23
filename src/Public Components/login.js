@@ -35,7 +35,7 @@ const Login=()=>{
                 window.location.href="/Admin/Home";
             }
             else if (user.role=="SubAdmin"){
-                window.location.href="/moviemanage";
+                window.location.href="/SubAdmin/home";
             }
             else if (user.role=="Customer"){
                 window.location.href="/home";

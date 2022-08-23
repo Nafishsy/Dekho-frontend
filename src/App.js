@@ -17,6 +17,7 @@ import ForgetPassword from './Public Components/ForgetPassword';
 import Profile from './AdminComponents/Profile';
 import ChangePass from './AdminComponents/ChangePass';
 import LogOut from './Public Components/Logout';
+import BarChart from './SubAdminComponents/BarChart';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       
       <Router>
         
-        {/* <TopBar/> */}
+        <TopBar/>
 
         <Routes>
 
@@ -36,16 +37,18 @@ function App() {
               <Route path="/registration" element={<Registration />}></Route>
               <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
               <Route path="/logout" element={<LogOut />}></Route>
+              
 
 
               
-              <Route path="/home" element={<Home />}></Route>
+              <Route path="/SubAdmin/home" element={<Home />}></Route>
               <Route path="/addmovies" element={<AddMovies />}></Route>
               <Route path="/moviemanage" element={<MovieMange/>}></Route>
               <Route path="/movie/edit/:id" element={<MovieEdit/>} />
               <Route path="/movie/delete/:id" element={<MovieDelete/>} />
               <Route path="/report" element={<Reports/>} />
               <Route path="/notfound" element={<NotFound/>} />
+              <Route path="/reportChart" element={<BarChart />}></Route>
 
 
               <Route path="/Admin/CustomersMoviesList" element={<AdminCustomersMoviesList/>}/>

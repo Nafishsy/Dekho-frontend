@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axiosConfig from '../Public Components/axiosConfig';
+import {Bar} from 'react-chartjs-2'
+import BarChart from './BarChart';
 
 const Reports=()=>{
 
@@ -21,7 +23,7 @@ const Reports=()=>{
 
     return(
         <div>
-
+            {/* <BarChart /> */}
             <center>
             <h1>Billing Report</h1>
             Total Account:{bills.total} <br></br>
