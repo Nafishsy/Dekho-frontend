@@ -10,7 +10,6 @@ const MovieMange=()=>{
 
     return(
         <div>
-            <TopBar/>
             <MovieList/>
         </div>
     )

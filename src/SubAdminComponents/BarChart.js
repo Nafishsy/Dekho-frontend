@@ -2,6 +2,7 @@ import { Chart as ChartJS } from 'chart.js/auto'
 import React, { useEffect, useState } from "react";
 import { Bar,Pie} from 'react-chartjs-2'
 import axiosConfig from '../Public Components/axiosConfig';
+import '../CSS/pieChart.css';
 
 
 
@@ -68,12 +69,9 @@ const BarChart = () =>{
     },[])
 
     return(
-        <div >
-
-            
-            <Bar data={data} options={options} style={{height: '10px', width: '100%'}}/> 
-
-
+        
+        <div id="chart-wrapper">           
+            <Pie data={data} options={options}/> 
         </div>
             
 

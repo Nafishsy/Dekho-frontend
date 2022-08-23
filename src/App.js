@@ -21,14 +21,16 @@ import BarChart from './SubAdminComponents/BarChart';
 
 
 function App() {
+
+  
   return (
     <div className="App">
 
 
       
       <Router>
-        
-        <TopBar/>
+
+      {localStorage.getItem("role")=='SubAdmin' && <TopBar/>}
 
         <Routes>
 

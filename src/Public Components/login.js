@@ -31,10 +31,13 @@ const Login=()=>{
 
             alert("Hoise")
             
-            if(user.role==="Admin"){
+            if(user.role==="Admin"){                
+                debugger
                 window.location.href="/Admin/Home";
             }
             else if (user.role=="SubAdmin"){
+                localStorage.setItem("role",'SubAdmin');
+                alert(localStorage.getItem("role"));
                 window.location.href="/SubAdmin/home";
             }
             else if (user.role=="Customer"){
