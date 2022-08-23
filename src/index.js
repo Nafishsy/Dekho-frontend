@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import BarChart from './AdminComponents/BarChart';
+import BarChart from './AdminComponents/ADMBarChart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <BarChart/>
+    <App />
+    {/* <BarChart/> */}
    </React.StrictMode>
 );
 

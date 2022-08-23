@@ -21,6 +21,7 @@ import BarChart from './SubAdminComponents/BarChart';
 import SubProfile from './SubAdminComponents/SubProfile';
 import SubChangePass from './SubAdminComponents/SubChangePass';
 import ChatSys from './SubAdminComponents/ChatSys';
+import AdmBarChart from './AdminComponents/ADMBarChart';
 
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
               <Route path="/Admin/Home" element={<AdminHome/>}/>
               <Route path="/Admin/Profile" element={<Profile/>}/>
               <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/>
-              {/* <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/> */}
+              <Route path="/Admin/Bar" element={<AdmBarChart/>}/>
               {/* ANIK END */}
 
 

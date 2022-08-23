@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosConfig from '../Public Components/axiosConfig';
 import AdminTopBar from "./AdminTopBar";
-import BarChart from "./BarChart";
+import BarChart from "./ADMBarChart";
 
 const AdminUsersList = () => {
     const [UserList, setUserList] = useState([]);
