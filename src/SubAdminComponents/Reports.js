@@ -24,14 +24,22 @@ const Reports=()=>{
     return(
         <div>
             
-            <center>
-            <h1>Billing Report</h1>
-            Total Account:{bills.total} <br></br>
-            Paid: {bills.actives} <br></br>
-            inacative: {bills.inactives} <br></br>
-            banned: {bills.bans} <br></br>
-            <BarChart />
-            </center>
+
+
+                <table width='100%'>
+                    <tr>
+                        <td>
+                    Total Account:{bills.total} <br/><br/>
+                    Paid: {bills.actives} <br></br>
+                    inacative: {bills.inactives} <br></br>
+                    banned: {bills.bans} <br></br>
+                        </td>
+                        <td >
+                        <BarChart />
+                        </td>
+                    </tr>
+                </table>
+
 
             <table width='100%  ' border='1'>
                 <th>Username</th>
