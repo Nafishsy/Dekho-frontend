@@ -23,13 +23,14 @@ const Reports=()=>{
 
     return(
         <div>
-            <BarChart />
+            
             <center>
             <h1>Billing Report</h1>
             Total Account:{bills.total} <br></br>
             Paid: {bills.actives} <br></br>
             inacative: {bills.inactives} <br></br>
             banned: {bills.bans} <br></br>
+            <BarChart />
             </center>
 
             <table width='100%  ' border='1'>

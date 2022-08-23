@@ -18,6 +18,8 @@ import Profile from './AdminComponents/Profile';
 import ChangePass from './AdminComponents/ChangePass';
 import LogOut from './Public Components/Logout';
 import BarChart from './SubAdminComponents/BarChart';
+import SubProfile from './SubAdminComponents/SubProfile';
+import SubChangePass from './SubAdminComponents/SubChangePass';
 
 
 function App() {
@@ -40,9 +42,7 @@ function App() {
               <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
               <Route path="/logout" element={<LogOut />}></Route>
               
-
-
-              
+              {/* Nafiz */}
               <Route path="/SubAdmin/home" element={<Home />}></Route>
               <Route path="/addmovies" element={<AddMovies />}></Route>
               <Route path="/moviemanage" element={<MovieMange/>}></Route>
@@ -51,8 +51,10 @@ function App() {
               <Route path="/report" element={<Reports/>} />
               <Route path="/notfound" element={<NotFound/>} />
               <Route path="/reportChart" element={<BarChart />}></Route>
+              <Route path="/SubAdmin/Profile" element={<SubProfile/>}/>
+              <Route path="/SubAdmin/Profile/ChangePassword" element={<SubChangePass/>}/>
 
-
+              {/* Anik */}
               <Route path="/Admin/CustomersMoviesList" element={<AdminCustomersMoviesList/>}/>
               <Route path="/Admin/UsersList" element={<AdminUsersList/>}/>
               <Route path="/Admin/Home" element={<AdminHome/>}/>
