@@ -29,6 +29,7 @@ import AddSlideBanner from './components/AddSlideBanner';
 
 import AdmUserBarChart from './AdminComponents/ADMUserBarChart';
 import AdmUserAreaChart from './AdminComponents/ADMUserAreaChart';
+import CustomerProfile from './CustomerComponents/CustomerProfile';
 
 
 
@@ -86,6 +87,7 @@ function App() {
                <Route path="/customer/Bell" element={<Bell/>}></Route>
                <Route path="/watch/movie/:id" element={<WatchMovie/>} />
                <Route path="/banner/uplode" element={<AddSlideBanner/>} />
+               <Route path="/customer/profile" element={<CustomerProfile/>} />
                 
 
 

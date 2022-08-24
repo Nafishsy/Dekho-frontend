@@ -53,6 +53,9 @@ const Nav = () => {
         })
         console.log(movies);
     },[]);
+
+
+
     const LogOut=()=>{
 
       var data = {username:localStorage.getItem("username")}
@@ -195,6 +198,7 @@ const Nav = () => {
             </IconButton>
 
             {/* ........................... */}
+            <Link to="/customer/profile">My profile</Link>
             <button onClick={(e)=>{LogOut()}} >Logout</button>
           </Stack>
         )}
