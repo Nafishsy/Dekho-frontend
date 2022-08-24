@@ -8,8 +8,7 @@ const ChatSys=()=>{
 
     useEffect(()=>{
         axiosConfig.get("subadmin/chat").then((rsp)=>{ 
-        
-            debugger     
+        debugger     
         setChat(rsp.data);
         },(er)=>{
 

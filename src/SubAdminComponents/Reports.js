@@ -2,11 +2,15 @@ import React,{useState,useEffect} from "react";
 import axiosConfig from '../Public Components/axiosConfig';
 import {Bar} from 'react-chartjs-2'
 import BarChart from './BarChart';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const Reports=()=>{
 
     const[bills,setBills] = useState([]);
     const[accounts,setAccounts] = useState([]);
+    const [datachange, setDatachange] = useState('');
 
     useEffect(()=>{
 
@@ -19,19 +23,19 @@ const Reports=()=>{
         })
 
     },[])
+    
 
-    const[flgSts,setFlgSts] = useState(false);
+    const handleChange=(id,vl)=>{
+        var data={id:id,status:vl}
+        debugger
+        axiosConfig.post("subadmin/bills/changestatus",data).
+        then((rsp)=>{
+            window.location.reload(false);
+            debugger
+            },(er)=>{
 
-    const handleChange=()=>{
-
-        // axiosConfig.get("subadmin/bills/changestatus").
-        // then((rsp)=>{            
-            
-        //     debugger
-        //     },(er)=>{
-
-        //         debugger;
-        //     })
+                debugger;
+            })
     }
 
     return(
@@ -63,8 +67,19 @@ const Reports=()=>{
                     accounts.map((ac)=>
                     <tr>
                         <td key={ac.id}>{ac.username}</td>
-                        <td>{ac.status}</td>
-                        <td><button onClick={handleChange}>Change Status</button></td>
+                        
+                        <td>
+                            {ac.status}
+                        </td>
+
+                        <td>
+                            <center>
+                            <button onClick={(e)=>{handleChange(ac.id,e.target.value)}} value="Active">Active</button>
+                            <button onClick={(e)=>{handleChange(ac.id,e.target.value)}} value="Banned">Banned</button>
+                            <button onClick={(e)=>{handleChange(ac.id,e.target.value)}} value="Inactive">Inactive</button>
+                            </center>
+                            
+                        </td>
                     </tr>
                     )
                 }
