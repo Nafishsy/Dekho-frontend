@@ -19,7 +19,7 @@ instance.interceptors.response.use((rsp)=>{
 },(err)=>{
     if(err.response.status==401){
         debugger;
-        window.location.href="/notfound";
+        window.location.href="/";
     }
     debugger
     return Promise.reject(err);
