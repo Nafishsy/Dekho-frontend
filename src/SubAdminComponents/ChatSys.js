@@ -15,7 +15,7 @@ const ChatSys=()=>{
         },(er)=>{
 
         })
-    },[geseMessage,ashcheMessage]);
+    },[geseMessage, ashcheMessage]);
 
     const [message,setMessage] = useState("");
    
@@ -26,8 +26,8 @@ const ChatSys=()=>{
 
         axiosConfig.post("subadmin/sendtext",data).
         then((succ)=>{
-            setGeseMessage(true)
-            console.log(succ.data) //ashche
+            setGeseMessage(!geseMessage)
+            //console.log(succ.data) //ashche
             debugger
         },(erros)=>{
             debugger
@@ -39,10 +39,11 @@ const ChatSys=()=>{
         //pathabe
         const data={text:message,id:2};
 
-        axiosConfig.post("subadmin/sendtext",data).
+        axiosConfig.post("customer/sendtext",data).
         then((succ)=>{
-            setGeseMessage(true)
-            console.log(succ.data) //ashche
+            ashcheMessage(!ashcheMessage)
+            window.location.reload(false);
+            //console.log(succ.data) //ashche
             debugger
         },(erros)=>{
             debugger
@@ -66,11 +67,7 @@ const ChatSys=()=>{
                 </div>    
             </div>
             
-            <div class="textbox">           
-            <textarea onChange={(e)=>{setMessage(e.target.value)}} resize='none' ></textarea>
-            <button onClick={(e) => { send(e.target.value) }}>Send</button>
-            <button onClick={(e) => { sendByCustomer(e.target.value) }}>Send By Customer</button>
-            </div>
+
              
 
              
@@ -104,10 +101,15 @@ const ChatSys=()=>{
                 }
 
                 </span>
-                    
+            <div class="textbox">           
+            <textarea onChange={(e)=>{setMessage(e.target.value)}} resize='none' ></textarea>
+            <button onClick={(e) => { send(e.target.value) }}>Send</button>
+            <button onClick={(e) => { sendByCustomer(e.target.value) }}>Send By Customer</button>
+            </div>
             
 
         </div>
+        
 
     )
 }
