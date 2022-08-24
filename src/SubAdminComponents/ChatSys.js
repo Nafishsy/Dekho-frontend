@@ -38,7 +38,7 @@ const ChatSys=()=>{
     const sendByCustomer=()=>{
         //pathabe
         const data={text:message,id:2};
-
+        debugger
         axiosConfig.post("customer/sendtext",data).
         then((succ)=>{
             ashcheMessage(!ashcheMessage)
