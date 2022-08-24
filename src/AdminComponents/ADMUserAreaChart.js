@@ -5,19 +5,19 @@ import {Bar} from 'react-chartjs-2'
 import Chart from 'react-apexcharts';
 import AdminTopBar from "./AdminTopBar";
 
-const AdmBarChart = () => {
+const AdmUserAreaChart = () => {
 
 
-    const[data,setData] = useState();
     const[data1,setData1] = useState();
     const[data2,setData2] = useState();
+    const[data,setData] = useState();
 
     useEffect(()=>{
 
-        axiosConfig.get("/Admin/UsersListCount").then((rsp)=>{    
-            setData(rsp.data[0]+rsp.data[1])       
+        axiosConfig.get("/Admin/UsersListCount").then((rsp)=>{           
             setData1(rsp.data[0]);
             setData2(rsp.data[1]);
+            setData(rsp.data[0]+rsp.data[1]);
         debugger
         },(er)=>{
             debugger;
@@ -31,13 +31,13 @@ const AdmBarChart = () => {
                 <center>Total users: {data}</center>
 
                 <Chart
-                type="bar"
+                type="area"
                 width={1500}
                 height={700}
 
                 series={[
                     {
-                        name:"",
+                        name:"Number of users ",
                         data:[data1,data2]
                     }
                 ]}
@@ -82,4 +82,4 @@ const AdmBarChart = () => {
             </div>
     )
 }
-export default AdmBarChart
+export default AdmUserAreaChart
