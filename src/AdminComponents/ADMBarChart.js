@@ -10,12 +10,14 @@ const AdmBarChart = () => {
 
     const[data1,setData1] = useState();
     const[data2,setData2] = useState();
+    const[data,setData] = useState();
 
     useEffect(()=>{
 
         axiosConfig.get("/Admin/UsersListCount").then((rsp)=>{           
             setData1(rsp.data[0]);
             setData2(rsp.data[1]);
+            setData(rsp.data[0]+rsp.data[1]);
         debugger
         },(er)=>{
             debugger;
@@ -26,6 +28,7 @@ const AdmBarChart = () => {
     return (
             <div>
                 <AdminTopBar/>
+                <center>Total users: {data}</center>
 
                 <Chart
                 type="bar"
@@ -34,7 +37,7 @@ const AdmBarChart = () => {
 
                 series={[
                     {
-                        name:"",
+                        name:"Number of users ",
                         data:[data1,data2]
                     }
                 ]}
