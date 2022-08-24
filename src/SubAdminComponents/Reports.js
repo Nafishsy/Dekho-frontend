@@ -2,9 +2,7 @@ import React,{useState,useEffect} from "react";
 import axiosConfig from '../Public Components/axiosConfig';
 import {Bar} from 'react-chartjs-2'
 import BarChart from './BarChart';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Dropdown from 'react-bootstrap/Dropdown';
+
 
 const Reports=()=>{
 
