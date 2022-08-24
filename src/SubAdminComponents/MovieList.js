@@ -16,7 +16,7 @@ const MovieList=()=>{
 
 
     const Delete=(id)=>{    
-        var answer = window.confirm("Save data?");
+        var answer = window.confirm("Delete data?");
 
         if (answer) {
             axiosConfig.get("movie/delete/"+id).

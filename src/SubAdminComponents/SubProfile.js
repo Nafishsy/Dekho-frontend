@@ -17,7 +17,7 @@ const SubProfile=()=>{
     useEffect(()=>{
 
     var data = {username:localStorage.getItem("username")}
-    axiosConfig.post("userinfo",data).then
+    axiosConfig.post("subadmin/userinfo",data).then
     ((rsp)=>{
         setUser(rsp.data)
         debugger;
@@ -40,7 +40,7 @@ const SubProfile=()=>{
         
         console.log(data);
         debugger
-        axiosConfig.post("profilepic/upload",data).
+        axiosConfig.post("subadmin/profilepic/upload",data).
         then((succ)=>{
             //setMsg(succ.data.msg);
             setppFlag(true)
@@ -57,7 +57,7 @@ const SubProfile=()=>{
         event.preventDefault();
         var data= {username:localStorage.getItem("username"),curr_pass:curr_pass,new_pass:new_pass,conf_pass:conf_pass}
         debugger
-        axiosConfig.post("profilepic/changepass",data).
+        axiosConfig.post("subadmin/profilepic/changepass",data).
         then((succ)=>{
             //setMsg(succ.data.msg);
             setFlag(false)

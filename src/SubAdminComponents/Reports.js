@@ -20,6 +20,19 @@ const Reports=()=>{
 
     },[])
 
+    const[flgSts,setFlgSts] = useState(false);
+
+    const handleChange=()=>{
+
+        // axiosConfig.get("subadmin/bills/changestatus").
+        // then((rsp)=>{            
+            
+        //     debugger
+        //     },(er)=>{
+
+        //         debugger;
+        //     })
+    }
 
     return(
         <div>
@@ -51,7 +64,7 @@ const Reports=()=>{
                     <tr>
                         <td>{ac.username}</td>
                         <td>{ac.status}</td>
-                        <td><button>CHECK</button></td>
+                        <td><button onClick={handleChange}>Change Status</button></td>
                     </tr>
                     )
                 }
