@@ -40,13 +40,13 @@ const ChatSys=()=>{
             
             <div class="message-box">
                 <div class='bck'>
-                <p>Message Here</p>
+                <p>Another side</p>
                 </div>    
             </div>
             
             <div class="sender-box">
                 <div class='sender-bck'>
-                <p>Message Here SS</p>
+                <p>My Side</p>
                 </div>    
             </div>
             
