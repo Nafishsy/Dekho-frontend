@@ -100,11 +100,13 @@ const ChatSys=()=>{
                 }
 
                 </span>
+                
             <div class="textbox">           
             <textarea onChange={(e)=>{setMessage(e.target.value)}} resize='none' ></textarea>
             <button onClick={(e) => { send(e.target.value) }}>Send</button>
             <button onClick={(e) => { sendByCustomer(e.target.value) }}>Send By Customer</button>
             </div>
+
             
 
         </div>

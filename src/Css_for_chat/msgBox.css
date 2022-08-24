@@ -1,3 +1,9 @@
+.Chat{
+  position: sticky;
+top: 50%;
+}
+
+
 .message-box {
     margin: auto;
     margin-left: 25px;
