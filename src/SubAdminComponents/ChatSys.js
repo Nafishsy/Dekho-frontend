@@ -4,7 +4,9 @@ import '../Css_for_chat/msgBox.css';
 
 const ChatSys=()=>{
 
-    const [chat,setChat] = useState("");
+    const [chat,setChat] = useState([]);
+    const [geseMessage,setGeseMessage] = useState(false);
+    const [ashcheMessage,setAshcheMessage] = useState(false);
 
     useEffect(()=>{
         axiosConfig.get("subadmin/chat").then((rsp)=>{ 
@@ -13,9 +15,10 @@ const ChatSys=()=>{
         },(er)=>{
 
         })
-    },[]);
+    },[geseMessage,ashcheMessage]);
 
     const [message,setMessage] = useState("");
+   
     
     const send=()=>{
         //pathabe
@@ -23,6 +26,7 @@ const ChatSys=()=>{
 
         axiosConfig.post("subadmin/sendtext",data).
         then((succ)=>{
+            setGeseMessage(true)
             console.log(succ.data) //ashche
             debugger
         },(erros)=>{
@@ -42,7 +46,7 @@ const ChatSys=()=>{
             
             <div class="sender-box">
                 <div class='sender-bck'>
-                <p>Message Here</p>
+                <p>Message Here SS</p>
                 </div>    
             </div>
             
@@ -51,6 +55,40 @@ const ChatSys=()=>{
             <button onClick={(e) => { send(e.target.value) }}>Send</button>
             </div>
              
+
+             
+                
+                <span>
+
+                
+                {
+                    chat.map((ct)=>
+                    <div>
+                        
+                        {
+                        ct.a_id==0 ? //jodi a_id 0 hoy taile amar message
+                            <div class="sender-box">
+                                <div class='sender-bck'>
+                                <p key={ct.id}> {ct.text}  </p>
+                                </div>
+                            </div> 
+                        : 
+                        <div class="message-box">
+                            <div class='bck'>
+                            <p key={ct.id}> {ct.text}  </p>
+                            </div>    
+                         </div>
+                      }
+                        
+                    </div>
+
+                    
+                    )
+                }
+
+                </span>
+                    
+            
 
         </div>
 
