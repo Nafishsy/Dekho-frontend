@@ -8,12 +8,14 @@ import AdminTopBar from "./AdminTopBar";
 const AdmBarChart = () => {
 
 
+    const[data,setData] = useState();
     const[data1,setData1] = useState();
     const[data2,setData2] = useState();
 
     useEffect(()=>{
 
-        axiosConfig.get("/Admin/UsersListCount").then((rsp)=>{           
+        axiosConfig.get("/Admin/UsersListCount").then((rsp)=>{    
+            setData(rsp.data[0]+rsp.data[1])       
             setData1(rsp.data[0]);
             setData2(rsp.data[1]);
         debugger
@@ -26,6 +28,7 @@ const AdmBarChart = () => {
     return (
             <div>
                 <AdminTopBar/>
+                <center>Total users: {data}</center>
 
                 <Chart
                 type="bar"
