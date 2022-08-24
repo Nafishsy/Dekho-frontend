@@ -29,6 +29,7 @@ const Registration=()=>{
     }
     return(
         <div>
+            <center><h1>DEKHO</h1></center><br/> <hr/>
 
             <form onSubmit={handleReg}>
 

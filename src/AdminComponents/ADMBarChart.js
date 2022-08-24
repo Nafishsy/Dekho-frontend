@@ -29,20 +29,22 @@ const AdmBarChart = () => {
 
                 <Chart
                 type="bar"
-                width={1380}
+                width={1500}
                 height={700}
 
                 series={[
                     {
                         name:"",
-                        data:[data1,data2] //ekhane customer count
+                        data:[data1,data2]
                     }
                 ]}
 
                 options={{
                     title:{
                         text:"Customers VS SubAdmins",
-                        style:{fontSize:30}
+                        style:{fontSize:30},
+                        align:'center'
+
                     },
 
                     colors:['#2A0944'],

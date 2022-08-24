@@ -78,87 +78,74 @@ const Profile=()=>{
             <AdminTopBar/>
             <br/>
             <b>
-                <table border='0px' width='100%' height='500px'>
+                <table width='100%' height='500px'>
 
                     <tr>
                         <td>Username:</td>
                         <td>{localStorage.getItem("username")}</td>
-
                     </tr>
+
                     <tr>
                         <td>Email:</td>
                         <td>{user.email}</td>
-
                     </tr>
+
                     <tr>
                         <td>Password:</td>
                         <td>{user.password}</td>
-
                     </tr>
+
                     <tr>
                         <td>Role:</td>
                         <td>{user.role}</td>
-
                     </tr>
+                    
                     <tr>
                         <td>Profile Pic:</td>
                         <td>
-
                             <img height='250px' width='25%'src={`http://localhost:8000/profilepics/${user.profilepic}`} ></img>
                             <br/>
                             <form onSubmit={handleSubmit}>
                                 <input type="file" onChange={(e)=>{setProfilepic(e.target.files[0])}} name="profilepic"></input> 
                                 <span>{errs.profilepic? errs.profilepic[0]:''} </span><br/>
                                 <input type="submit" value="Upload"/> 
-                            
                             </form>
                         </td>
-        
                     </tr>
-
-                    <div>
-                        {
-                            !flag
-                                ? <div>
-                                        <button onClick={ChangePassCLK}>Change Password</button>
-                                   </div>
-                                : ''
-                        }
-                     </div>
-
-                    <div>
-                        {
-                            flag
-                                ? <div>
-
-                                    <form onSubmit={handleChangePass}>
-
-                                    
-                                    Old Password: <input onChange={(e)=>{setCurr_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={curr_pass}/> <br/>
-                                    <span>{errs.curr_pass? errs.curr_pass[0]:''}</span><br/>
-                                    
-                                   
-                                    
-                                     New Password: <input onChange={(e)=>{setNew_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={new_pass}/> <br/>
-                                    <span>{errs.new_pass? errs.new_pass[0]:''}</span><br/>
-
-                                   
-                                    
-                                     Confirm Password: <input onChange={(e)=>{setConf_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={conf_pass}/> <br/>
-                                    <span>{errs.conf_pass? errs.conf_pass[0]:''}</span><br/>
-                                    <input type="submit" value="Change"/>
-                                    </form>
-                                    </div>
-                                : ""
-                        }
-                     </div>
                 </table>
+                <div>
+                {
+                    !flag
+                        ? <div>
+                                <button onClick={ChangePassCLK}>Change Password</button>
+                            </div>
+                        : ''
+                }
+                </div>
 
+                    <div>
+                    {
+                        flag
+                            ? <div>
+
+                                <form onSubmit={handleChangePass}>
+                                <hr/>
+                                
+                                Old Password: <input onChange={(e)=>{setCurr_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={curr_pass}/> <br/>
+                                <span>{errs.curr_pass? errs.curr_pass[0]:''}</span><br/>
+                                
+                                    New Password: <input onChange={(e)=>{setNew_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={new_pass}/> <br/>
+                                <span>{errs.new_pass? errs.new_pass[0]:''}</span><br/>
+
+                                    Confirm Password: <input onChange={(e)=>{setConf_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={conf_pass}/> <br/>
+                                <span>{errs.conf_pass? errs.conf_pass[0]:''}</span><br/>
+                                <input type="submit" value="Change"/>
+                                </form>
+                                </div>
+                            : ""
+                    }
+                    </div>
             </b>
-            
-            
-
-            
         </div>
     )
 }
