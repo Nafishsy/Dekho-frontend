@@ -8,7 +8,7 @@ const Reports=()=>{
 
     const[bills,setBills] = useState([]);
     const[accounts,setAccounts] = useState([]);
-    const [datachange, setDatachange] = useState('');
+    const [datachange, setDatachange] = useState(false);
 
     useEffect(()=>{
 
@@ -20,15 +20,16 @@ const Reports=()=>{
             debugger;
         })
 
-    },[])
+    },[datachange,bills])
     
 
     const handleChange=(id,vl)=>{
+
         var data={id:id,status:vl}
         debugger
         axiosConfig.post("subadmin/bills/changestatus",data).
         then((rsp)=>{
-            window.location.reload(false);
+            setDatachange(!datachange)
             debugger
             },(er)=>{
 
