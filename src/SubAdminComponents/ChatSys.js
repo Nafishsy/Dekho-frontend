@@ -4,14 +4,27 @@ import '../Css_for_chat/msgBox.css';
 
 const ChatSys=()=>{
 
+    const [chat,setChat] = useState("");
+
+    useEffect(()=>{
+        axiosConfig.get("subadmin/chat").then((rsp)=>{ 
+        
+            debugger     
+        setChat(rsp.data);
+        },(er)=>{
+
+        })
+    },[]);
+
     const [message,setMessage] = useState("");
     
     const send=()=>{
         //pathabe
-        const data={text:message};
+        const data={text:message,id:2};
 
         axiosConfig.post("subadmin/sendtext",data).
         then((succ)=>{
+            console.log(succ.data) //ashche
             debugger
         },(erros)=>{
             debugger
