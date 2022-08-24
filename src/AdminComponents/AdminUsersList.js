@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axiosConfig from '../Public Components/axiosConfig';
 import AdminTopBar from "./AdminTopBar";
-import BarChart from "./ADMBarChart";
 
 const AdminUsersList = () => {
     const [UserList, setUserList] = useState([]);
@@ -120,7 +119,7 @@ const AdminUsersList = () => {
                                         {
                                             show
                                                 ? <div>
-                                                    <fieldset style={{ width: "10%" }}>
+                                                    <fieldset>
                                                         <b>ID : {User.id} </b><br />
                                                         <b>Username : {User.username} </b><br />
                                                         <b>Email : {User.email} </b><br />

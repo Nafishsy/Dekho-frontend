@@ -5,7 +5,7 @@ import {Bar} from 'react-chartjs-2'
 import Chart from 'react-apexcharts';
 import AdminTopBar from "./AdminTopBar";
 
-const AdmBarChart = () => {
+const AdmUserAreaChart = () => {
 
 
     const[data1,setData1] = useState();
@@ -31,7 +31,7 @@ const AdmBarChart = () => {
                 <center>Total users: {data}</center>
 
                 <Chart
-                type="bar"
+                type="area"
                 width={1500}
                 height={700}
 
@@ -82,4 +82,4 @@ const AdmBarChart = () => {
             </div>
     )
 }
-export default AdmBarChart
+export default AdmUserAreaChart
