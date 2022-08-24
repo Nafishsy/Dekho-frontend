@@ -19,9 +19,17 @@ const AddMovie=()=>{
         
         var data = new FormData();
 
+        if(movie!=null)
+        {
+            data.append("movie",movie,banner.name);
+        }
+        if(banner!=null)
+        {
+            data.append("banner",banner,banner.name);
+        }
+
         data.append("name",name);
-        data.append("banner",banner,name);
-        data.append("movie",movie,name);   
+ 
         data.append("description",description);
         data.append("genre",genre);
         console.log(data);

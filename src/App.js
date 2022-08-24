@@ -21,12 +21,17 @@ import BarChart from './SubAdminComponents/BarChart';
 import SubProfile from './SubAdminComponents/SubProfile';
 import SubChangePass from './SubAdminComponents/SubChangePass';
 import ChatSys from './SubAdminComponents/ChatSys';
+<<<<<<< HEAD
 import AdmBarChart from './AdminComponents/ADMBarChart';
 import CustomerHome from './CustomerComponents/CustomerHome';
 import Bell from './CustomerComponents/Bell';
 import WatchMovie from './components/WatchMovie';
 import AddSlideBanner from './components/AddSlideBanner';
 
+=======
+import AdmUserBarChart from './AdminComponents/ADMUserBarChart';
+import AdmUserAreaChart from './AdminComponents/ADMUserAreaChart';
+>>>>>>> 6ca34e482ba4789cdaecef10a51fb40ce8ec81c5
 
 
 function App() {
@@ -72,7 +77,8 @@ function App() {
               <Route path="/Admin/Home" element={<AdminHome/>}/>
               <Route path="/Admin/Profile" element={<Profile/>}/>
               <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/>
-              <Route path="/Admin/Bar" element={<AdmBarChart/>}/>
+              <Route path="/Admin/UsersBar" element={<AdmUserBarChart/>}/>
+              <Route path="/Admin/UsersArea" element={<AdmUserAreaChart/>}/>
               {/* ANIK END */}
 
 

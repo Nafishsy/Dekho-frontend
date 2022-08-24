@@ -43,8 +43,41 @@ const MovieList=()=>{
         })
     }
 
+    const [search, setSearch] = useState('');
+
+    // const goSearch=(event)=>{
+        
+    //     setSearch(event)
+    //     var data ={search:search}
+    //     console.log(data)
+    //     axiosConfig.post("SubAdmin/movie/list/search",data).
+    //     then((succ)=>{
+    //         setMovies(succ.data)
+    //         debugger
+    //         //window.location.href="/";
+    //     },(err)=>{
+
+    //         debugger
+    //     })
+    // }
+
+    useEffect(()=>{
+        const data = {search:search}
+        debugger
+        axiosConfig.post("SubAdmin/movie/list/search",data).then
+        ((rsp)=>{
+            setMovies(rsp.data)
+        debugger
+        },(err)=>{
+        debugger
+        })
+        },[search])
+
+
     return(
         <div>
+            Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
+
             <table border='1' width='100%'>
                         <th>Name</th>
                         <th>Genre</th>

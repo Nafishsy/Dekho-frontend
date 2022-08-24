@@ -5,7 +5,7 @@ import {Bar} from 'react-chartjs-2'
 import Chart from 'react-apexcharts';
 import AdminTopBar from "./AdminTopBar";
 
-const AdmBarChart = () => {
+const AdmUserBarChart = () => {
 
 
     const[data,setData] = useState();
@@ -18,6 +18,7 @@ const AdmBarChart = () => {
             setData(rsp.data[0]+rsp.data[1])       
             setData1(rsp.data[0]);
             setData2(rsp.data[1]);
+            setData(rsp.data[0]+rsp.data[1]);
         debugger
         },(er)=>{
             debugger;
@@ -37,7 +38,7 @@ const AdmBarChart = () => {
 
                 series={[
                     {
-                        name:"",
+                        name:"Number of users ",
                         data:[data1,data2]
                     }
                 ]}
@@ -82,4 +83,4 @@ const AdmBarChart = () => {
             </div>
     )
 }
-export default AdmBarChart
+export default AdmUserBarChart

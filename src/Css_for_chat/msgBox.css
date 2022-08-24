@@ -1,11 +1,17 @@
+.Chat{
+  position: sticky;
+top: 50%;
+}
+
+
 .message-box {
     margin: auto;
     margin-left: 25px;
     margin-top: 25px;
     padding-left: 23px;
     width: 25%;
-    border: 3px solid #0b68ea;
-    background-color: #0b68ea;
+    border: 3px solid #666b72;
+    background-color: #b6bcc5;
     
   }
 .sender-box {

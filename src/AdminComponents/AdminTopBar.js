@@ -27,7 +27,8 @@ const AdminTopBar=()=>{
             <hr/>
             <AdminTop url="/Admin/CustomersMoviesList" value="Customers-Movies"/> |
             | <AdminTop url="/Admin/UsersList" value="All Users"/> |
-            | <AdminTop url="/Admin/Bar" value="Bar"/> |
+            | <AdminTop url="/Admin/UsersBar" value="Users-BarChart"/> |
+            | <AdminTop url="/Admin/UsersArea" value="Users-AreaChart"/> |
 
             | <button onClick={(e)=>{LogOut()}} >Logout</button> 
             <hr/>
