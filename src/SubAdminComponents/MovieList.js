@@ -76,6 +76,7 @@ const MovieList=()=>{
 
     return(
         <div>
+
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
 
             <table border='1' width='100%'>

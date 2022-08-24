@@ -77,7 +77,7 @@ const Nav = () => {
         <Typography mr={2}>TEXT</Typography>
         <Stack direction='row' spacing={2} alignItems='center' flexGrow={1}>
           <Link
-            to='/'
+            to='/customer/home'
             style={{
               textDecoration: 'none',
             }}

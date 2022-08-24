@@ -22,7 +22,7 @@ const Nav=()=>{
     return(
         <div>
             <Link to="/customer/home">Home</Link> &nbsp;&nbsp;
-            <Link to="/">Movies</Link> &nbsp;&nbsp;
+            <Link >Movies</Link> &nbsp;&nbsp;
             <Link to="/customer/Bell">Bell</Link> &nbsp;&nbsp;
             {localStorage.getItem("username")&&<button><Link to="/report">My List</Link> &nbsp;&nbsp;</button> }
             {localStorage.getItem("username")==null && <Link to="/reportChart">Login</Link>}
