@@ -22,7 +22,7 @@ const Login=()=>{
             var user =succ.data.user;           
             //var message=succ.data.msg; off kore rakhsi alert marbo pore
             debugger
-            
+
             localStorage.setItem("_authToken",token);
             localStorage.setItem("username",username);
             
@@ -66,7 +66,7 @@ const Login=()=>{
                     <span>{errs.password? errs.password[0]:''}</span><br/>
                     <input type="submit" value="Login"/><br/><br/><hr/>
             </form>
-
+            <span>{errs.msg? errs.msg:''}</span><br/>
             Don't have an account ? <button><Link to={`/registration`} >REGISTER </Link></button> <br/><br/>
             <button><Link to={`/forgetpassword`} >Forgot Password ?</Link></button> 
             </center>
