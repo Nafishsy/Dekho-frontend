@@ -87,7 +87,7 @@ const AdminUsersList = () => {
                                             <th>Role</th>
                                             <th>Operation</th>
                                             <th>Show details</th>
-                                            <th>Graph</th>
+                                            
                                         </tr>
                                         {
                                             UserList.map((item) =>
@@ -108,7 +108,7 @@ const AdminUsersList = () => {
                                                             </form>
                                                         }
                                                     </td>
-                                                    {/* <td><BarChart/></td> */}
+                                                    
                                                 </tr>
                                             )
                                         }

@@ -3,6 +3,7 @@ import axiosConfig from '../Public Components/axiosConfig';
 import{Chart as ChartJS, BarElement, CategoryScale, LinearScale} from 'chart.js'
 import {Bar} from 'react-chartjs-2'
 import Chart from 'react-apexcharts';
+import AdminTopBar from "./AdminTopBar";
 
 const AdmBarChart = () => {
 
@@ -24,6 +25,7 @@ const AdmBarChart = () => {
 
     return (
             <div>
+                <AdminTopBar/>
 
                 <Chart
                 type="bar"
