@@ -29,7 +29,8 @@ const AdminTopBar=()=>{
             | <AdminTop url="/Admin/UsersList" value="All Users"/> |
             | <AdminTop url="/Admin/Bar" value="Bar"/> |
 
-            <button onClick={(e)=>{LogOut()}} >Logout</button> 
+            | <button onClick={(e)=>{LogOut()}} >Logout</button> 
+            <hr/>
         </div>
     )
 }
