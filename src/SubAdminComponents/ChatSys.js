@@ -41,8 +41,7 @@ const ChatSys=()=>{
         debugger
         axiosConfig.post("customer/sendtext",data).
         then((succ)=>{
-            ashcheMessage(!ashcheMessage)
-            window.location.reload(false);
+            setAshcheMessage(!ashcheMessage)
             //console.log(succ.data) //ashche
             debugger
         },(erros)=>{

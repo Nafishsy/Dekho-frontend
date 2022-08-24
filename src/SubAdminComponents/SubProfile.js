@@ -132,17 +132,17 @@ const SubProfile=()=>{
                                     <form onSubmit={handleChangePass}>
 
                                     
-                                    Old Password: <input onChange={(e)=>{setCurr_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={curr_pass}/> <br/>
+                                    Old Password: <input onChange={(e)=>{setCurr_pass(e.target.value)}} type="text" name="Old Password" value={curr_pass}/> <br/>
                                     <span>{errs.curr_pass? errs.curr_pass[0]:''}</span><br/>
                                     
                                    
                                     
-                                     New Password: <input onChange={(e)=>{setNew_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={new_pass}/> <br/>
+                                     New Password: <input onChange={(e)=>{setNew_pass(e.target.value)}} type="text" name="New Password" value={new_pass}/> <br/>
                                     <span>{errs.new_pass? errs.new_pass[0]:''}</span><br/>
 
                                    
                                     
-                                     Confirm Password: <input onChange={(e)=>{setConf_pass(e.target.value)}} type="conf_pass" name="conf_pass" value={conf_pass}/> <br/>
+                                     Confirm Password: <input onChange={(e)=>{setConf_pass(e.target.value)}} type="text" name="Confirm Password" value={conf_pass}/> <br/>
                                     <span>{errs.conf_pass? errs.conf_pass[0]:''}</span><br/>
                                     <input type="submit" value="Change"/>
                                     </form>
