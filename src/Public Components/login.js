@@ -42,7 +42,7 @@ const Login=()=>{
                 window.location.href="/SubAdmin/home";
             }
             else if (user.role=="Customer"){
-                window.location.href="/home";
+                window.location.href="/customer/home";
             }
 
         },(erros)=>{

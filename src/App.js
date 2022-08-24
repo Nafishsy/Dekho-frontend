@@ -1,7 +1,7 @@
 //import './App.css';
 import TopBar from './SubAdminComponents/TopBar';
 import Home from './SubAdminComponents/Home';
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import {BrowserRouter as Router,Link,Route,Routes} from 'react-router-dom';
 import AddMovies from './SubAdminComponents/AddMovies';
 import MovieMange from './SubAdminComponents/MovieManage';
 import MovieEdit from './SubAdminComponents/MovieEdit';
@@ -22,6 +22,11 @@ import SubProfile from './SubAdminComponents/SubProfile';
 import SubChangePass from './SubAdminComponents/SubChangePass';
 import ChatSys from './SubAdminComponents/ChatSys';
 import AdmBarChart from './AdminComponents/ADMBarChart';
+import CustomerHome from './CustomerComponents/CustomerHome';
+import Bell from './CustomerComponents/Bell';
+import WatchMovie from './components/WatchMovie';
+import AddSlideBanner from './components/AddSlideBanner';
+
 
 
 function App() {
@@ -35,6 +40,8 @@ function App() {
       <Router>
 
       {localStorage.getItem("role")=='SubAdmin' && <TopBar/>}
+      
+
 
         <Routes>
 
@@ -67,6 +74,17 @@ function App() {
               <Route path="/Admin/Profile/ChangePassword" element={<ChangePass/>}/>
               <Route path="/Admin/Bar" element={<AdmBarChart/>}/>
               {/* ANIK END */}
+
+
+              
+               {/* Nion */}
+               <Route path="/customer/home" element={<CustomerHome/>}></Route>
+               <Route path="/customer/Bell" element={<Bell/>}></Route>
+               <Route path="/watch/movie/:id" element={<WatchMovie/>} />
+               <Route path="/banner/uplode" element={<AddSlideBanner/>} />
+                
+
+
 
 
         </Routes>
