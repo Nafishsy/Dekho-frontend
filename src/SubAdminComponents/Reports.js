@@ -62,7 +62,7 @@ const Reports=()=>{
                 {
                     accounts.map((ac)=>
                     <tr>
-                        <td>{ac.username}</td>
+                        <td key={ac.id}>{ac.username}</td>
                         <td>{ac.status}</td>
                         <td><button onClick={handleChange}>Change Status</button></td>
                     </tr>
