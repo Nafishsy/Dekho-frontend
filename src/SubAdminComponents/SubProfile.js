@@ -28,8 +28,8 @@ const SubProfile=()=>{
 
     const ChangePassCLK=()=>{
         setFlag(true)
-
     }
+
     const handleSubmit=(event)=>{
         event.preventDefault();
         
@@ -127,11 +127,12 @@ const SubProfile=()=>{
                     <div>
                         {
                             flag
-                                ? <div>
+                                ? 
+                                
+                                <div>
 
                                     <form onSubmit={handleChangePass}>
 
-                                    
                                     Old Password: <input onChange={(e)=>{setCurr_pass(e.target.value)}} type="text" name="Old Password" value={curr_pass}/> <br/>
                                     <span>{errs.curr_pass? errs.curr_pass[0]:''}</span><br/>
                                     
@@ -146,10 +147,11 @@ const SubProfile=()=>{
                                     <span>{errs.conf_pass? errs.conf_pass[0]:''}</span><br/>
                                     <input type="submit" value="Change"/>
                                     </form>
-                                    </div>
+
+                                </div>
                                 : ""
                         }
-                     </div>
+                    </div>
                 </table>
 
             </b>
